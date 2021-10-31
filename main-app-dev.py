@@ -121,7 +121,7 @@ def performCalcLoop(calc,temp_display):  # KB - removed none assignment to temp_
                         displayResult(temp_display)
 
                     else:
-                        temp_display = "Err"
+                        temp_display = "Err"        # TL Errors must be cleared before any other operation can take place
                         displayResult(temp_display)
 
                 elif choice == '20':
