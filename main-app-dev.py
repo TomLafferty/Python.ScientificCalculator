@@ -40,6 +40,7 @@ def performCalcLoop(calc,temp_display):  # KB - removed none assignment to temp_
         print(temp_display)
 
         while True:
+
             while temp_display == 0:
 
                 try:
@@ -69,7 +70,8 @@ def performCalcLoop(calc,temp_display):  # KB - removed none assignment to temp_
                 elif choice == '4':
                     a, b = getTwoNumbers()
                     if b == 0:
-                        print("\nDISPLAY:\nErr")
+                        temp_display = "Err"
+                        displayResult(temp_display)
                     else:
                         temp_display = calc.div(a, b)
                         displayResult(temp_display)
@@ -113,7 +115,16 @@ def performCalcLoop(calc,temp_display):  # KB - removed none assignment to temp_
                 except:
                     print("Please enter a valid number.")
 
-                if choice == '20':
+                if temp_display == "Err":
+                    if choice == '21':
+                        temp_display = 0
+                        displayResult(temp_display)
+
+                    else:
+                        temp_display = "Err"
+                        displayResult(temp_display)
+
+                elif choice == '20':
                     print("Thanks for stopping by, have a great day.")
                     break  # user types q to quit calulator.
 
